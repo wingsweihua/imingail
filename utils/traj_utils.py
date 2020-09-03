@@ -232,8 +232,8 @@ def rmse_eval_time_dense(traj_exp, traj_lrn):
     '''
     traj_exp.rename(columns={'ts': 'ts_exp', 'speed': 'speed_exp', 'abs_pos': 'pos_exp', 'lane_id': 'lane_id_exp'}, inplace=True)
     traj_lrn.rename(columns={'ts': 'ts_lrn', 'speed': 'speed_lrn', 'abs_pos': 'pos_lrn', 'lane_id': 'lane_id_lrn'}, inplace=True)
-    traj_exp_group = traj_exp.groupby('vec_id')['ts_exp'].apply(list).to_dict()
-    traj_lrn_group = traj_lrn.groupby('vec_id')['ts_lrn'].apply(list).to_dict()
+    traj_exp_group = traj_exp.groupby(by=['vec_id', 'lane_id_exp'])['ts_exp'].apply(list).to_dict()
+    traj_lrn_group = traj_lrn.groupby(by=['vec_id', 'lane_id_lrn'])['ts_lrn'].apply(list).to_dict()
 
     traj_overall_vec_id = []
     traj_overall_delta_time = []

@@ -17,7 +17,7 @@ from shutil import copy
 parser = argparse.ArgumentParser(description='PyTorch GAIL')
 parser.add_argument('--env_name', type=str, default="gym_citycar-v0",
                     help='name of the environment to run')
-parser.add_argument('--max_episode_len', type=int, default=500,
+parser.add_argument('--max_episode_len', type=int, default=300,
                     help='how many time steps to run in each episode')
 parser.add_argument('--max_iter_num', type=int, default=1,
                     help='how many iterations to generate')
@@ -54,6 +54,13 @@ def main():
     # ============== copy the conf files ==================
     path_to_sim_conf = os.path.join("config", "simulator", "{}.json".format(args.scenario))
     copy(path_to_sim_conf, path_to_output)
+
+    # if args.scenario == '1x4_LA':
+    #     df = pickle.load(open(os.path.join(path_to_output, "traj_raw.pkl"), "rb"))
+    #     # only keep trajs at beginning, middle and end
+    #     df_sparse = extract_sparse_from_dense(df)
+    #     pickle.dump(df_sparse, open(os.path.join(path_to_output, "traj_sparse.pkl"), "wb"))
+    #     return
 
     # ============== initial env =====================
 

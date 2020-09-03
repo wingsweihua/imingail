@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-memo="la_3"
+memo="1x4"
 model_name="GAIL"
+interpolated="sparse"
 reward_func=1
 
 generate_traj_func(){
@@ -10,7 +11,7 @@ generate_traj_func(){
 
 run_gail_train_func(){
 #    mkdir "../data/output/$2/"
-    python main.py --scenario $1 --memo $2 --gamma 0 --model_name $3 --reward_func $4 --max_episode_len 300
+    python main.py --scenario $1 --memo $2 --gamma 0 --model_name $3 --reward_func $4 --max_episode_len 300 --interpolated $4
 }
 
 run_gail_test_func(){
@@ -29,14 +30,14 @@ wait
 
 cd ../imitation/gail/
 
-for file in "LA"
+for file in "1x4_LA"
 do
     run_gail_train_func ${file} ${memo} ${model_name} ${reward_func} &
 done
 
 wait
 
-for file in "LA"
+for file in "1x4_LA"
 do
     run_gail_test_func ${file} ${memo} ${model_name} ${reward_func} &
 done

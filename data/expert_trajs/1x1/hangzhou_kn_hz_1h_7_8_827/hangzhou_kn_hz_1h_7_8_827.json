@@ -1,12 +1,12 @@
 {
     "interval": 1.0,
     "seed": 0,
-    "dir": "data/",
-    "roadnetFile": "hangzhou_kn_hz_1h_7_8_827/roadnet.json",
-    "flowFile": "hangzhou_kn_hz_1h_7_8_827/flow.json",
+    "dir": "",
+    "roadnetFile": "data/hangzhou_kn_hz_1h_7_8_827/roadnet.json",
+    "flowFile": "data/hangzhou_kn_hz_1h_7_8_827/flow.json",
     "rlTrafficLight": true,
     "saveReplay": true,
-    "roadnetLogFile": "frontend/web/testcase_roadnet_3x3.json",
-    "replayLogFile": "frontend/web/testcase_replay_3x3.txt",
-    "signalPlanFile": "hangzhou_kn_hz_1h_7_8_827/signal_plan.txt"
+    "roadnetLogFile": "frontend/generate/generate_roadnet_1x1.json",
+    "replayLogFile": "frontend/generate/generate_replay_1x1.txt",
+    "signalPlanFile": "data/hangzhou_kn_hz_1h_7_8_827/signal_plan.txt"
 }

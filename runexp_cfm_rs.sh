@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-memo="4x4"
+memo="1x4"
 model_name="CFM-RS"
 max_iter=100
 
@@ -29,7 +29,7 @@ cd ../imitation/cfm_calibration/
 #    run_rs_func ${file} ${memo} ${max_iter}&
 #done
 
-for file in  "4x4_gudang"
+for file in  "1x4_LA"
 do
     run_rs_func ${file} ${memo} ${max_iter}&
 done

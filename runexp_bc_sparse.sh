@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-memo="4x4"
+memo="1x4"
 model_name="BC"
 batch_size=64
 hidden_size=40
@@ -36,7 +36,7 @@ wait
 cd ../imitation/bc/
 
 #for scenario in "hangzhou_bc_tyc_1h_7_8_1848" "hangzhou_bc_tyc_1h_8_9_2231" "hangzhou_bc_tyc_1h_10_11_2021" "hangzhou_kn_hz_1h_7_8_827" "hangzhou_sb_sx_1h_7_8_1671"
-for scenario in "4x4_gudang"
+for scenario in "1x4_LA"
 do
     run_bc_func ${scenario} ${memo} ${batch_size} ${hidden_size} ${num_epochs} ${interpolated}&
 done

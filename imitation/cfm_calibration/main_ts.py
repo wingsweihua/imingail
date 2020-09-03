@@ -105,6 +105,7 @@ def main():
         os.mkdir(os.path.join(ARGS.data_dir, ARGS.scenario))
     pickle.dump(trajBestTabu, open(os.path.join(ARGS.data_dir, ARGS.scenario, "traj_best_loss.pkl"), "wb"))
 
+
     score = []
 
     for params in tabuList:
@@ -128,7 +129,7 @@ def main():
     print('Best Loss: [%0.2f, %0.2f, %0.2f]' % (paramsBest[0], paramsBest[1], paramsBest[2]),
           'Best RMSE: [%0.2f, %0.2f, %0.2f]' % (paramsBestRMSE[0], paramsBestRMSE[1], paramsBestRMSE[2]))
     print(ARGS)
-    evaluate(path_exp_traj=os.path.join(TS.path_to_exp_traj, "traj_raw.pkl"),
+    evaluate(path_exp_traj=os.path.join(TS.path_to_exp_traj, "traj_sample.pkl"),
              path_lrn_traj=os.path.join(ARGS.data_dir, ARGS.scenario, "traj_best_RMSE.pkl"),
              len_lane=TS.len_lane,
              max_episode_len=ARGS.max_episode_len)

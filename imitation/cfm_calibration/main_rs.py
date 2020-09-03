@@ -22,7 +22,7 @@ parser.add_argument('--data_dir', type=str, default='data/output/cfm-rs')
 # experiment hyper-parameter
 parser.add_argument('--N_EXP', type=int, default=1,
                     help='number of experiment')
-parser.add_argument('--max_episode_len', type=int, default=500,
+parser.add_argument('--max_episode_len', type=int, default=300,
                     help='time length for trajectory')
 parser.add_argument('--ts', type=int, default=1,
                     help='time stamp (s)')

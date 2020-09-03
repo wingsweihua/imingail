@@ -86,6 +86,8 @@ parser.add_argument('--scenario', type=str, default="default")
 parser.add_argument('--model_name', type=str, default="GAIL")
 parser.add_argument('--reward_func', type=int, default=1)
 parser.add_argument('--interpolated', type=str, default="sparse")
+parser.add_argument('--sample_rate', type=float, default=0.2,
+                    help='sample rate from expert data (default: 0.8)')
 
 args = parser.parse_args()
 
@@ -97,7 +99,7 @@ def init_weights(m):
 
 
 def main():
-
+    print(args)
     # ============== initial output ==================
     run_ts = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S") + '_' + args.scenario
     path_to_output = os.path.join("data", "output", args.memo, args.model_name, run_ts)
@@ -160,12 +162,19 @@ def main():
         expert_demo = pickle.load(open((os.path.join(path_to_expert_traj, "traj_sparse.pkl")), "rb"))
         demonstrations = convert_trajs_to_array_interpolate(expert_demo, obs_header, action_header)
         print("demonstrations.shape", demonstrations[0].shape)
+        sample_indexes = np.random.randint(demonstrations[0].shape[0],
+                                           size=int(demonstrations[0].shape[0] * args.sample_rate))
+
+        demonstrations = [demonstrations[0].iloc[sample_indexes, :], demonstrations[1].iloc[sample_indexes, :]]
+        print("Sample_rate: ", args.sample_rate)
+        print("demonstrations.shape", demonstrations[0].shape)
     elif args.interpolated == "sparse":
         expert_demo = pickle.load(open((os.path.join(path_to_expert_traj, "traj_sparse.pkl")), "rb"))
         demonstrations = convert_trajs_to_array(expert_demo, obs_header, action_header)
         # todo add this into config for sample rate
         demonstrations = demonstrations[np.random.randint(demonstrations.shape[0],
-                                                         size=int(demonstrations.shape[0]*0.2)), :]
+                                                         size=int(demonstrations.shape[0]*args.sample_rate)), :]
+        print("Sample_rate: ", args.sample_rate)
         print("demonstrations.shape", demonstrations.shape)
     else:
         expert_demo = pickle.load(open((os.path.join(path_to_expert_traj, "traj_sample.pkl")), "rb"))

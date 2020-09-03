@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-memo="4x4"
+memo="1x4"
 model_name="GAIL"
-interpolated="sparse"
+interpolated="interpolated"
 
 generate_traj_func(){
     python generate_trajs.py --scenario $1 --memo $2
@@ -10,12 +10,12 @@ generate_traj_func(){
 
 run_gail_train_func(){
 #    mkdir "../data/output/$2/"
-    python main.py --scenario $1 --memo $2 --gamma 0 --model_name $3 --interpolated $4
+    python main.py --scenario $1 --memo $2 --gamma 0 --model_name $3 --interpolated $4 --max_episode_len 300
 }
 
 run_gail_test_func(){
 #    mkdir "../data/output/$2/"
-    python policy_test.py --scenario $1 --memo $2 --model_name $3
+    python policy_test.py --scenario $1 --memo $2 --model_name $3 --max_episode_len 300
 }
 
 cd scripts
@@ -30,14 +30,14 @@ wait
 
 cd ../imitation/gail/
 
-for file in "4x4_gudang"
+for file in "1x4_LA"
 do
     run_gail_train_func ${file} ${memo} ${model_name} ${interpolated}
 done
 
 wait
 
-for file in "4x4_gudang"
+for file in "1x4_LA"
 do
     run_gail_test_func ${file} ${memo} ${model_name}
 done
