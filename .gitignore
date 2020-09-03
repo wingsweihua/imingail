@@ -1,0 +1,7 @@
+.idea/
+data/output/*
+# config/
+.DS_Store
+
+*.pyc
+saved_model/*

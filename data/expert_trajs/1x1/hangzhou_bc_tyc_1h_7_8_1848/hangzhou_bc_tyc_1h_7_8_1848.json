@@ -1,0 +1,12 @@
+{
+    "interval": 1.0,
+    "seed": 0,
+    "dir": "data/",
+    "roadnetFile": "hangzhou_bc_tyc_1h_7_8_1848/roadnet.json",
+    "flowFile": "hangzhou_bc_tyc_1h_7_8_1848/flow.json",
+    "rlTrafficLight": true,
+    "saveReplay": true,
+    "roadnetLogFile": "frontend/web/testcase_roadnet_3x3.json",
+    "replayLogFile": "frontend/web/testcase_replay_3x3.txt",
+    "signalPlanFile": "hangzhou_bc_tyc_1h_7_8_1848/signal_plan.txt"
+}

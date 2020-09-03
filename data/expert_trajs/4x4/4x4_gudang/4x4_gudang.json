@@ -1,0 +1,12 @@
+{
+    "interval": 1.0,
+    "seed": 0,
+    "dir": "data/",
+    "roadnetFile": "4x4_gudang/roadnet.json",
+    "flowFile": "4x4_gudang/flow.json",
+    "rlTrafficLight": true,
+    "saveReplay": true,
+    "roadnetLogFile": "/home/weihua/PycharmProjects/LearnSimRing/frontend/replay/4x4_gudang.json",
+    "replayLogFile": "/home/weihua/PycharmProjects/LearnSimRing/frontend/replay/4x4_gudang.txt",
+    "signalPlanFile": "4x4_gudang/signal_plan.txt"
+}
