@@ -130,6 +130,6 @@ if __name__ == "__main__":
     len_lane = json.load(f)
 
     evaluate(path_exp_traj='/mnt/project/LearnSim/data/expert_trajs/default_memo/LA/traj_raw.pkl',
-             path_lrn_traj='/mnt/traj_raw_iter25.pkl',
+             path_lrn_traj='/mnt/traj_raw_XXX.pkl',
              len_lane=len_lane,
              max_episode_len=args.max_episode_len)
