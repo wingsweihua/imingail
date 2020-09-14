@@ -1,4 +1,4 @@
-# ImInGAIL: Learning to Simulate on Sparse Trajectory Data (ECML/PKDD'20)
+# ImInGAIL: Learning to Simulate on Sparse Trajectory Data (ECML-PKDD'20)
 
 
 
@@ -7,7 +7,7 @@
  author = {Wei, Hua and Chen, chacha and Liu, Chang and Zheng, Guanjie and Li, Zhenhui},
  title = {Learning to Simulate on Sparse Trajectory Data},
  booktitle = {Joint European Conference on Machine Learning and Knowledge Discovery in Databases},
- series = {ECML/PKDD '20},
+ series = {ECML-PKDD '20},
  year = {2020},
  organization={Springer}
 } 
