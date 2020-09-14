@@ -23,7 +23,7 @@ The code relies on the simulator of CityFlow, which provides scalable, multi-pro
 
 1. Intall the gym environment 'gym_citycar-v0' for CityFlow in your python environment.
 
-    ``https://github.com/wingsweihua/gym-citycar.git``
+    ``https://github.com/wingsweihua/gym-cityflow-car.git``
 
     There are two branches, one for intersection network and one for ring network.
  
